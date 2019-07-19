@@ -12,17 +12,18 @@
             <header>
                 <ul>
                     <li><a href="https://github.com/akhil953/CDC_Intern.git" target="_blank">GitHub</a></li>
-                    <li><a href="#" >What is HAPS ?</a></li>
+                    <li><a href="#" >About</a></li>
                 </ul>
             </header>
         
-            <form id="detais" action="#" method="GET">
+            <form id="detais" action="#" method="POST">
+                <p id="ctext">Check you heart status</p>
                 <p><input type="text" placeholder="Name" ></p>
-                <p><input type="text" placeholder="Age"/></p>
-                <p><input type="text" placeholder="Heart Rate "/></p>
-                <p><input type="text" placeholder="Body Temp "/></p>
-                <p><input type="text" placeholder="Blood Pressure "/></p>
-                <p><input type="text" placeholder="Blood Level "/></p>
+                <p><input type="number" placeholder="Age" required/></p>
+                <p><input type="number" placeholder="Heart Rate" required/></p>
+                <p><input type="number" placeholder="Body Temp" required/></p>
+                <p><input type="number" placeholder="Blood Pressure" required/></p>
+                <p><input type="number" placeholder="Blood Level" required/></p>
                 <p><input type="submit" value="calculate"/></p>
             </form>
         </section>
