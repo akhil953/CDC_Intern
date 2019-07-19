@@ -1,6 +1,6 @@
 body{
-    /*width: 100%;
-    height: 100vh;*/
+    width: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-image: url("../IMG/bgblack.png");
@@ -10,7 +10,6 @@ body{
     font-family: sans-serif;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     overflow: hidden;
 }
 h1{
@@ -25,6 +24,9 @@ h1{
     display: grid;
     grid-template-rows: 10% 90%;
 }
+#ctext{
+    color: rgb(168, 168, 168);
+}
 form{
     width: 100%;
     height: 100%;
@@ -33,12 +35,13 @@ form{
     padding-top: 10%;
     grid-row: 2/3;
 }
-input[type="text"]{
+input[type="text"],input[type="number"]{
     background: transparent;
     border-radius: 10px;
     color:white;
+    text-align: center;
     height: 30px;
-    width: 300px;
+    width: 280px;
     box-shadow: none;
 
     -webkit-transition: all 0.30s ease-in-out;
@@ -53,25 +56,35 @@ input::placeholder {
     
     margin-top: 30px;
   }
+  input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 input[type="submit"]{
     background-color: transparent;
-    color: #636c72;
+    color: rgb(168, 168, 168);
     text-decoration: none;
     border-radius: 10px;
     border-style: solid;
     height: 30px;
     width: auto;
 
-    -webkit-transition: all 0.30s ease-in-out;
-    -moz-transition: all 0.30s ease-in-out;
-    -ms-transition: all 0.30s ease-in-out;
-    -o-transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.10s ease-in-out;
+    -moz-transition: all 0.10s ease-in-out;
+    -ms-transition: all 0.10s ease-in-out;
+    -o-transition: all 0.10s ease-in-out;
     outline: none;
-    border: 1px solid #3B3B3B;
+    border: 1px solid rgb(168, 168, 168);
 }
 input:focus{
+    box-shadow: 0 0 5px white;
+    width: 300px;
+    border: 1px solid white;
+  }
+input[type="submit"]:focus{
     box-shadow: 0 0 2px white;
-    
+    width: auto;
     border: 1px solid white;
   }
 ul{
