@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HAPS</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="static/CSS/main.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <section id="inputData">
+        <header>
+            <ul>
+                <li><a href="https://github.com/akhil953/CDC_Intern.git" target="_blank">GitHub</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </header>
+
+        <form id="details" action="#" method="POST">
+            <p id="ctext">Check you heart status</p>
+            <p><input type="text" id="name" placeholder="Name"></p>
+            <p><input type="number" id="age" placeholder="Age" required /></p>
+            <p><input type="number" id="hr" placeholder="Heart Rate" required /></p>
+            <p><input type="number" id="bt" placeholder="Body Temp" required /></p>
+            <p><input type="number" id="bp" placeholder="Blood Pressure" required /></p>
+            <p><input type="number" id="bl" placeholder="Blood Level" required /></p>
+            <p><input type="submit" id="submit" value="calculate" /></p>
+        </form>
+        <div id="result">
+            <div id="loader"></div>
+            <div id="show">
+                <img src="static/IMG/1.png" />
+                <p>Your Chance of having heart attack is</p>
+                <h1 id="percent">50%</h1>
+                <button id="back" >
+                    <img id="backimg" src="static/IMG/b.png">
+                </button>
+            </div>
+        </div>
+    </section>
+    <h1 id="haps">HAPS</h1>
+
+    <a id="site" href="https://www.cdcllp.com/" target="_blank">www.cdcllp.com</a>
+
+    <script>
+        $(document).ready(function () {
+            
+
+                
+            $("#submit").click(function () {
+                $("#details").hide();
+                $("#result").show();
+
+                var requestData = {
+                    name: $("#name").val(),
+                    age: $("#age").val(),
+                    hr: $("#hr").val(),
+                    bt: $("#bt").val(),
+                    bp: $("#bp").val(),
+                    bl: $("#bl").val()
+                };
+
+                var url = 'http://127.0.0.1:8080/sendData'
+
+                $.post({
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    data: JSON.stringify(requestData),
+                    url: url,
+                    error: function () {
+                        alert('Sorry, an error occurred. Please try again later.');
+                    },
+                    success: function (response) {
+                        $("#percent").text("20%")
+                        alert(response.exists);
+                    }
+                });
+                
+
+            });
+            $("#back").click(function () {
+                $("#details").show();
+                $("#result").hide();
+            });
+
+        });
+    </script>
+</body>
+
+</html>

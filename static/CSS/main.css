@@ -12,7 +12,7 @@ body{
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
 }
-h1{
+#haps{
     color: white;
     font-size: 45px;
     grid-column: 2/3;
@@ -87,6 +87,27 @@ input[type="submit"]:focus{
     width: auto;
     border: 1px solid white;
   }
+
+/*Resut*/
+#result{
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    z-index: 1;
+    color: white;
+    width: 50%;
+    height: 500px;
+    text-align: center;
+    padding-top: 8%;
+}
+#percent{
+    font-size: 50px;
+}
+#back{
+    background: transparent;
+    border: none;
+}
 ul{
     grid-row: 1/2;
     padding-top: 20px;
