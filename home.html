@@ -18,7 +18,7 @@
             </ul>
         </header>
 
-        <form id="details" action="#" method="POST">
+        <form id="details" action="" method="POST">
             <p id="ctext">Check you heart status</p>
             <p><input type="text" id="name" placeholder="Name"></p>
             <p><input type="number" id="age" placeholder="Age" required /></p>
@@ -47,11 +47,10 @@
     <script>
         $(document).ready(function () {
             
-
+            
                 
-            $("#submit").click(function () {
-                $("#details").hide();
-                $("#result").show();
+            $("#submit").click(function (e) {
+                
 
                 var requestData = {
                     name: $("#name").val(),
@@ -73,16 +72,22 @@
                         alert('Sorry, an error occurred. Please try again later.');
                     },
                     success: function (response) {
-                        $("#percent").text("20%")
-                        alert(response.exists);
+                        
+                        //alert(HA);
+                        $("#details").hide();
+                        $("#result").show();
+                        $("#percent").text(response.exists+"%");
                     }
+                       
                 });
-                
 
+                e.preventDefault();    
+                
             });
             $("#back").click(function () {
-                $("#details").show();
-                $("#result").hide();
+            $("#details").show();
+            $("#result").hide();
+            $("#details").trigger("reset");
             });
 
         });

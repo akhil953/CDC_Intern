@@ -17,15 +17,18 @@ class App:
     @cherrypy.tools.json_in()
     @cherrypy.tools.json_out()
     def sendData(self):
+        json_obj = cherrypy.request.json
+        name = json_obj['name']
+        age = json_obj['age']
+        hr = json_obj['hr']
+        bt = json_obj['bt']
+        bp = json_obj['bp']
+        bl = json_obj['bl']
+        
         #do something with the data
-            json_obj = cherrypy.request.json
-            name = json_obj['name']
-            age = json_obj['age']
-            hr = json_obj['hr']
-            bt = json_obj['bt']
-            bp = json_obj['bp']
-            bl = json_obj['bl']
-            return {"exists": name}
+
+        rslt= 20
+        return {"exists": rslt}
 
             
 if __name__ == '__main__':
