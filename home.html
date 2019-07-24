@@ -32,7 +32,7 @@
             <div id="loader"></div>
             <div id="show">
                 <img src="static/IMG/1.png" />
-                <p>Your Chance of having heart attack is</p>
+                <p>Your Heart Status</p>
                 <h1 id="percent">50%</h1>
                 <button id="back">
                     <img id="backimg" src="static/IMG/b.png">
@@ -68,15 +68,15 @@
                     dataType: 'json',
                     data: JSON.stringify(requestData),
                     url: url,
-                    error: function () {
-                        alert('Sorry, an error occurred. Please try again later.');
+                    error: function (error) {
+                        console.log({error})
                     },
                     success: function (response) {
 
                         //alert(HA);
                         $("#details").hide();
                         $("#result").show();
-                        $("#percent").text(response.exists + "%");
+                        $("#percent").text(response.status);
                     }
 
                 });
