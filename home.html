@@ -34,7 +34,7 @@
                 <img src="static/IMG/1.png" />
                 <p>Your Chance of having heart attack is</p>
                 <h1 id="percent">50%</h1>
-                <button id="back" >
+                <button id="back">
                     <img id="backimg" src="static/IMG/b.png">
                 </button>
             </div>
@@ -46,11 +46,11 @@
 
     <script>
         $(document).ready(function () {
-            
-            
-                
+
+
+
             $("#submit").click(function (e) {
-                
+
 
                 var requestData = {
                     name: $("#name").val(),
@@ -72,22 +72,22 @@
                         alert('Sorry, an error occurred. Please try again later.');
                     },
                     success: function (response) {
-                        
+
                         //alert(HA);
                         $("#details").hide();
                         $("#result").show();
-                        $("#percent").text(response.exists+"%");
+                        $("#percent").text(response.exists + "%");
                     }
-                       
+
                 });
 
-                e.preventDefault();    
-                
+                e.preventDefault();
+
             });
             $("#back").click(function () {
-            $("#details").show();
-            $("#result").hide();
-            $("#details").trigger("reset");
+                $("#details").show();
+                $("#result").hide();
+                $("#details").trigger("reset");
             });
 
         });
