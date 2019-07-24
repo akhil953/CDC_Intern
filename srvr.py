@@ -27,21 +27,21 @@ class App:
         
         #do something with the data
 	if(hr>=91 and hr<=100):
-            print("excelent")
+            print("HEART ATTACK")
         elif(hr>=81 and hr<=90):
-            print("good")
+            print("ARRHYTHMIA")
         elif(hr>=71 and hr<=80):
-            print("normal")
+            print("ATRIAL FIBRILLATION")
         elif(hr>=61 and hr<=70):
-            print("may be")
+            print("NORMAL")
         elif(hr>=51 and hr<=60):
-            print("less")
+            print("HEART VALUE DISEASE")
         elif(hr>=41 and hr<=50):
             print("poor")
         elif(hr>=0 and hr<=40):
-            print(".....")
+            print("SUDDEN CARDIC DEATH")
         else:
-            print("Strange ..!!")
+            print("INVALID INPUT")
 
         #rslt= 20
         #return {"exists": rslt}
