@@ -20,7 +20,7 @@ class App:
         elif(hr>=61 and hr<=70):
             return(May be")
         elif(hr>=51 and hr<=60):
-            return("May be")
+            return("May be. Consult a Dr.")
         elif(hr>=41 and hr<=50):
             return("Poor. Take care of your health")
         elif(hr>=0 and hr<=40):
