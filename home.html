@@ -68,15 +68,16 @@
                     dataType: 'json',
                     data: JSON.stringify(requestData),
                     url: url,
-                    error: function () {
+                    error: function (err) {
                         alert('Sorry, an error occurred. Please try again later.');
+                        console.log(err);
                     },
                     success: function (response) {
                         
                         //alert(HA);
                         $("#details").hide();
                         $("#result").show();
-                        $("#percent").text(response.exists+"%");
+                        $("#percent").text(response.stats);
                     }
                        
                 });
