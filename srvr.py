@@ -66,5 +66,5 @@ if __name__ == '__main__':
             'tools.staticdir.dir': './static'
         }
     }
-
     cherrypy.quickstart(App(), '/', conf)
+
