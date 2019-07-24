@@ -68,15 +68,20 @@
                     dataType: 'json',
                     data: JSON.stringify(requestData),
                     url: url,
+
                     error: function (error) {
                         console.log({error})
-                    },
+
+                    
                     success: function (response) {
 
                         //alert(HA);
                         $("#details").hide();
                         $("#result").show();
                         $("#percent").text(response.status);
+
+                        
+
                     }
 
                 });
