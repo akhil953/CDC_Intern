@@ -12,17 +12,17 @@ class App:
     
     def status(self,hr):
         if(hr>=91 and hr<=100):
-            return("excelent")
+            return("Bad health. Take care of your health")
         elif(hr>=81 and hr<=90):
-            return("good")
+            return("Good")
         elif(hr>=71 and hr<=80):
-            return("normal")
+            return("Normal. You Are Healthy")
         elif(hr>=61 and hr<=70):
-            return("may be")
+            return(May be")
         elif(hr>=51 and hr<=60):
-            return("less")
+            return("May be. Consult a Dr.")
         elif(hr>=41 and hr<=50):
-            return("poor")
+            return("Poor. Take care of your health")
         elif(hr>=0 and hr<=40):
             return(".....")
         else:
@@ -66,5 +66,3 @@ if __name__ == '__main__':
             'tools.staticdir.dir': './static'
         }
     }
-    
-    cherrypy.quickstart(App(), '/', conf)
